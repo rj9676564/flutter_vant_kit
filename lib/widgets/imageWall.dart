@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_vant_kit/theme/style.dart';
-import 'package:multi_image_picker/multi_image_picker.dart';
 
 //照片墙
 class ImageWall extends StatefulWidget {
@@ -133,16 +132,6 @@ class _ImageWall extends State<ImageWall> {
       onTap: () async {
         List<Asset> resultList = [];
         try {
-          resultList = await MultiImagePicker.pickImages(
-            maxImages: widget.multiple ? widget.count - images.length : 1,
-            enableCamera: true,
-            cupertinoOptions: CupertinoOptions(takePhotoIcon: "chat"),
-            materialOptions: MaterialOptions(
-                startInAllView: true,
-                useDetailsView: true,
-                selectCircleStrokeColor: "#000000",
-                actionBarColor: "#000000"),
-          );
         } on Exception catch (e) {
           print(e.toString());
         }

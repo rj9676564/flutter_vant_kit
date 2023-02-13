@@ -27,7 +27,7 @@ class ImageWall extends StatefulWidget {
   final Function(List<String> newImages) onChange;
 
   // 监听图片上传
-  final Future<List<String>> Function(List<Asset> file) onUpload;
+  final Future<List<String>> Function(List file) onUpload;
 
   // 删除图片后的回调
   final Function(String? removedUrl)? onRemove;
@@ -130,19 +130,7 @@ class _ImageWall extends State<ImageWall> {
     return InkWell(
       child: widget.uploadBtn ?? btn,
       onTap: () async {
-        List<Asset> resultList = [];
-        try {
-        } on Exception catch (e) {
-          print(e.toString());
-        }
-        List<String> urls = await widget.onUpload(resultList);
-        if (urls.isEmpty) {
-          return;
-        }
-        setState(() {
-          images.addAll(urls);
-        });
-        widget.onChange(images);
+       
       },
     );
   }

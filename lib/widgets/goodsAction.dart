@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vant_kit/theme/style.dart';
-import 'package:flutter_vant_kit/widgets/badge.dart';
+import 'package:flutter_vant_kit/widgets/badge.dart' as badge;
 import 'package:flutter_vant_kit/widgets/button.dart';
 
 class GoodsAction extends StatefulWidget {
@@ -90,7 +90,7 @@ class _GoodsAction extends State<GoodsAction> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Badge(
+                badge.Badge(
                   value: action.info,
                   child: action.customIcon ??
                       Icon(action.icon,

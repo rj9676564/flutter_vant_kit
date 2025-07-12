@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vant_kit/theme/style.dart';
-import 'package:flutter_vant_kit/widgets/badge.dart';
+import 'package:flutter_vant_kit/widgets/badge.dart' as badge;
 
 class Sidebar extends StatefulWidget {
   // 当前选项
@@ -52,7 +52,7 @@ class _Sidebar extends State<Sidebar> {
           ),
           //TODO:解决badge的value改变时会重新渲染
           child: (item.dot || item.info != null)
-              ? Badge(
+              ? badge.Badge(
                   value: item.info,
                   child: text,
                 )
